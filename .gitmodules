@@ -1,6 +1,3 @@
 [submodule "src/app/Plugin/Composer"]
 	path = src/app/Plugin/Composer
 	url = git://github.com/uzyn/cakephp-composer.git
-[submodule "src/app/Plugin/Twig"]
-	path = src/app/Plugin/Twig
-	url = https://github.com/paulredmond/cakephp-twig.git
