@@ -109,4 +109,4 @@ CakeLog::config('error', array(
 ));
 
 CakePlugin::load('Composer', array('bootstrap' => true));
-CakePlugin::load('Twig', array('bootstrap' => true));
+CakePlugin::load('DebugKit');

@@ -1,3 +1,6 @@
 [submodule "src/app/Plugin/Composer"]
 	path = src/app/Plugin/Composer
 	url = git://github.com/uzyn/cakephp-composer.git
+[submodule "src/app/Plugin/DebugKit"]
+	path = src/app/Plugin/DebugKit
+	url = git://github.com/cakephp/debug_kit.git
