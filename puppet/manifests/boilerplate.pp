@@ -31,6 +31,15 @@ package { 'php5-fpm':
   require => Exec['apt-get update'],
 }
 
+package { 'php5-mysql': 
+  ensure => present,
+  require => [
+    Exec['apt-get update'],
+    Package['php5-fpm']
+  ],
+  notify => Service['php5-fpm'],
+}
+
 package { 'nginx': 
   ensure => present,
   require => Exec['apt-get update'],
@@ -71,15 +80,52 @@ exec { 'node-modules symlink':
   command => '/bin/rm -rfv /usr/local/node_modules && /bin/rm -rfv /vagrant/node_modules && /bin/mkdir /usr/local/node_modules && /bin/ln -s /usr/local/node_modules /vagrant/node_modules ',
 }
 
-exec { 'npm install -g grunt-cli bower':,
+exec { 'npm-install-deps':
   command => '/usr/bin/npm install -g grunt-cli bower',
   require => Exec['npm'],
 }
 
 exec { 'npm-packages':,
   command => '/usr/bin/npm install',
-  require => [Exec['npm install -g grunt-cli bower'], Exec['node-modules symlink']],
+  require => [Exec['npm-install-deps'], Exec['node-modules symlink']],
   cwd => '/vagrant',
+}
+
+package { 'mysql-server': 
+  ensure => installed 
+}
+
+package { 'mysql-client': 
+  ensure => installed 
+}
+
+service { 'mysql':
+  enable => true,
+  ensure => running,
+  require => Package['mysql-server'],
+}
+
+service { 'php5-fpm':
+  enable => true,
+  ensure => running,
+  require => Package['php5-fpm'],
+}
+
+
+exec { 'set-mysql-password':
+  unless => "mysqladmin -uroot -pp0wer status",
+  path => ["/bin", "/usr/bin"],
+  command => "mysqladmin -uroot password p0wer",
+  require => Service["mysql"],
+}
+
+exec { 'create-methodone-db':
+      unless => "/usr/bin/mysql -ucakephp -pluuurvedecake Methodone",
+      command => "/usr/bin/mysql -uroot -pp0wer -e \"create database Methodone; grant all on Methodone.* to cakephp@localhost identified by 'luuurvedecake';\"",
+      require => [
+        Service["mysql"],
+        Exec["set-mysql-password"]
+      ],
 }
 
 service { 'nginx':
@@ -123,6 +169,6 @@ file { 'vagrant-nginx-enable':
 }
 
 file { "/var/www/":
-    ensure => link,
-    target => "/vagrant",
+  ensure => link,
+  target => "/vagrant",
 }
