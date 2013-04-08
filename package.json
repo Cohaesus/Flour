@@ -1,0 +1,48 @@
+{
+  "name": "Methadone",
+  "title": "Methadone",
+  "description": "CakePHP Site Build Boilerplate.",
+  "version": "1.0.0",
+  "homepage": "https://github.com/nickpack/Methadone",
+  "author": {
+    "name": "Nick Pack",
+    "email": "nick@nickpack.com",
+    "url": "http://0xdeadfa11.net"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:nickpack/Methadone.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nickpack/Methadone/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/nickpack/Methadone/blob/master/LICENSE-MIT"
+    }
+  ],
+  "dependencies": {
+  },
+  "main": "./src/index",
+  "keywords": [
+    "static"
+  ],
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-jshint": "~0.3.0",
+    "grunt-contrib-watch": "~0.3.1",
+    "uglify-js": "~2.2.5",
+    "grunt-contrib-jasmine": "~0.4.1",
+    "phantomjs": "~1.9.0-0",
+    "grunt-lib-phantomjs": "~0.2.0",
+    "grunt-contrib-uglify": "~0.2.0",
+    "grunt-contrib-concat": "~0.1.3",
+    "grunt-sass": "~0.4.0",
+    "grunt-contrib-sass": "~0.3.0",
+    "grunt-contrib-csslint": "~0.1.1",
+    "grunt-contrib-cssmin": "~0.5.0",
+    "grunt-contrib-copy": "~0.4.1",
+    "bower": "~0.8.5"
+  }
+}
