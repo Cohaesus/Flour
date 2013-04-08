@@ -63,7 +63,18 @@ class DATABASE_CONFIG {
 		'password' => 'password',
 		'database' => 'database_name',
 		'prefix' => '',
-		//'encoding' => 'utf8',
+		'encoding' => 'utf8',
+	);
+
+	public $development = array(
+		'datasource' => 'Database/Mysql',
+		'persistent' => false,
+		'host' => 'localhost',
+		'login' => 'cakephp',
+		'password' => 'luuurvedecake',
+		'database' => 'Methadone',
+		'prefix' => '',
+		'encoding' => 'utf8',
 	);
 
 	public $test = array(
@@ -74,6 +85,15 @@ class DATABASE_CONFIG {
 		'password' => 'password',
 		'database' => 'test_database_name',
 		'prefix' => '',
-		//'encoding' => 'utf8',
+		'encoding' => 'utf8',
 	);
+
+	public function __construct()
+	{
+		$env = getenv('CAKE_ENV') ?: 'development';
+
+	    if (property_exists($this, $env)) {
+	    	$this->default = $this->$env;
+	    }
+	}
 }
