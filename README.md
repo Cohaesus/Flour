@@ -1,4 +1,4 @@
-# CakePHP 2.x Site Build Boilerplate
+# Self-Raising CakePHP 2.x Site Build Boilerplate
 This is an attempt at automating our cake builds at [Cohaesus](http://www.cohaesus.co.uk).
 
 ## Requirements
