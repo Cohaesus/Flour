@@ -122,8 +122,8 @@ exec { 'set-mysql-password':
 }
 
 exec { 'create-methodone-db':
-      unless => "/usr/bin/mysql -ucakephp -pluuurvedecake Methodone",
-      command => "/usr/bin/mysql -uroot -pp0wer -e \"create database Methodone; grant all on Methodone.* to cakephp@localhost identified by 'luuurvedecake';\"",
+      unless => "/usr/bin/mysql -ucakephp -pluuurvedecake Flour",
+      command => "/usr/bin/mysql -uroot -pp0wer -e \"create database Flour; grant all on Flour.* to cakephp@localhost identified by 'luuurvedecake';\"",
       require => [
         Service["mysql"],
         Exec["set-mysql-password"]
