@@ -92,11 +92,13 @@ exec { 'npm-packages':,
 }
 
 package { 'mysql-server': 
-  ensure => installed 
+  ensure => installed,
+  require => Exec['apt-get update']
 }
 
 package { 'mysql-client': 
-  ensure => installed 
+  ensure => installed,
+  require => Exec['apt-get update']
 }
 
 service { 'mysql':
