@@ -72,7 +72,7 @@ class DATABASE_CONFIG {
 		'host' => 'localhost',
 		'login' => 'cakephp',
 		'password' => 'luuurvedecake',
-		'database' => 'Methodone',
+		'database' => 'Flour',
 		'prefix' => '',
 		'encoding' => 'utf8',
 	);

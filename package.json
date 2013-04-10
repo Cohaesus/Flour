@@ -1,9 +1,9 @@
 {
-  "name": "Methadone",
-  "title": "Methadone",
-  "description": "CakePHP Site Build Boilerplate.",
-  "version": "0.1",
-  "homepage": "https://github.com/nickpack/Methadone",
+  "name": "Flour",
+  "title": "Flour",
+  "description": "Self Raising CakePHP Site Build Boilerplate.",
+  "version": "0.2",
+  "homepage": "https://github.com/Cohaesus/Flour",
   "author": {
     "name": "Nick Pack",
     "email": "nick@nickpack.com",
@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:nickpack/Methadone.git"
+    "url": "git@github.com:Cohaesus/Flour.git"
   },
   "bugs": {
-    "url": "https://github.com/nickpack/Methadone/issues"
+    "url": "https://github.com/Cohaesus/Flour/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/nickpack/Methadone/blob/master/LICENSE-MIT"
+      "url": "https://github.com/Cohaesus/Flour/issues/blob/master/LICENSE-MIT"
     }
   ],
   "dependencies": {
